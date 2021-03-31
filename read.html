@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>キレイなお家</title>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+  <div class="container">
+  <div id="right">
+		<a href="">ログイン</a>
+		<a href="">新規登録</a>
+		</div>
+    <header>
+      <h1>キレイなお家</h1>
+    </header>
+    <nav>
+        <a href="room.html">つかい方</a>
+        <a href="create2.html">おそうじ登録</a>
+        <a href="readAll.html">一覧表示</a>
+    </nav>
+<div role="main">
+<h2>場所：キッチン </h2>
+<form action="/CleanUp/CreateTask" method="post">
+<input type="hidden" name="room_id" value="<%=room.getId() %>">
+<input type="hidden" name="rname" value="<%=room.getName() %>">
+<table class="form-table">
+<tr>
+<th>タスク</th>
+<td><input type="text" name="name" placeholder="例：鏡磨き"></td>
+</tr>
+<tr>
+<th>掃除の間隔</th>
+<td><input type="number" name="day" min="1" max="31" placeholder="日数">
+<select name="period">
+<option value="日">日</option>
+<option value="週">週</option>
+<option value="ケ月">ケ月</option>
+<option value="年">年</option>
+</select>毎</td>
+</tr>
+<tr><th>最後に掃除した日</th>
+<td><input type="date" name="updated" value="<%=updated%>"></td>
+</tr>
+<tr><td></td>
+<td><button type="submit">タスク登録</button></td></tr>
+</table>
+</form>
+
+<h2>キッチンの状態</h2>
+<div id="wrapper">
+<table class="list-table">
+<tr><th>タスク</th><th>掃除の間隔</th><th>予定日まで</th><th>掃除完了</th><th>更新</th><th>削除</th>
+</tr>
+
+<form action="read2.html" method="post">
+<tr><td id="green">シンク周り</td>
+<td>3 日毎</td>
+<td id="red">-1 日</td>
+<td><button type="submit"  onclick="return alert('頑張りましたね！お疲れさまでした。');">完了！</button></td>
+</form>
+<td><a href="update.html">更新</a></td>
+<td><a href="/CleanUp/Delete?id=<%=t.getId() %>&room_id=<%=room.getId()%>&rname=<%=room.getName()%>" onclick="return confirm('[<%=t.getName()%>]を削除してよろしいですか？');">削除</a>
+</td>
+</tr>
+
+</table>
+
+</div>
+</div>
+    <footer>
+      &copy;CleanHouseProject
+    </footer>
+  </div>
+</body>
+</html>

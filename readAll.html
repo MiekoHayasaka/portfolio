@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>キレイなお家</title>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+  <div class="container">
+  <div id="right">
+		<a href="">ログイン</a>
+		<a href="">新規登録</a>
+  </div>
+  <header>
+	<h1>キレイなお家</h1>
+  </header>
+   <nav>
+        <a href="room.html">つかい方</a>
+        <a href="create2.html">おそうじ登録</a>
+        <a href="readAll.html">一覧表示</a>
+   </nav>
+<div role="main">
+<h2>お掃除の予定一覧</h2>
+<div id="wrapper">
+
+<table class="list-table">
+
+<tr><th><a href="read2.html">
+<h3>キッチン</h3></th>
+<th><input type="hidden" name="room_id" value="<%=r.getId()%>"></thd>
+<th></th><th></th>
+</tr>
+<tr><td>タスク</td><td>掃除の間隔</td><td>予定日まで</td><td>掃除完了</td>
+</tr>
+	<form action="/CleanUp/Read" method="post">
+	<input type="hidden" name="id" value="<%=t.getId()%>">
+	<tr>
+	<td id="green">シンク周り</td>
+	<td>3 日毎</td>
+	<td id="blue">3 日</td>
+
+	<td><button type="submit"  onclick="return alert('頑張りましたね！お疲れさまでした。');">完了！</button></td>
+	</tr>
+	</form>
+</table><br><br>
+</div>
+</div>
+    <footer>
+      &copy;CleanHouseProject
+    </footer>
+</div>
+</body>
+</html>

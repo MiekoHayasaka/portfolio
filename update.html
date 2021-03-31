@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>キレイなお家</title>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+  <div class="container">
+  <div id="right">
+		<a href="">ログイン</a>
+		<a href="">新規登録</a>
+		</div>
+    <header>
+      <h1>キレイなお家</h1>
+    </header>
+    <nav>
+        <a href="index.jsp">つかい方</a>
+        <a href="/CleanUp/Create">おそうじ登録</a>
+        <a href="/CleanUp/Read">一覧表示</a>
+    </nav>
+<div role="main">
+<h2>キッチンのタスク更新</h2>
+<form action="read2.html" method="post">
+<table class="form-table">
+<tr>
+<th>タスク</th>
+<td><input type="text" name="name" value="シンク周り"></td>
+</tr>
+<tr>
+<th>掃除の間隔</th>
+<td><input type="number" name="day" min="1" max="31" value="3">
+<select name="period">
+<option value="日" selected>日</option>
+<option value="週">週</option>
+<option value="ケ月">ケ月</option>
+<option value="年">年</option>
+</select> 毎</td>
+</tr>
+<tr><td>
+</td>
+<td><button type="submit">タスク更新</button></td>
+</tr>
+</table>
+</form>
+</div>
+<br><br><br><br><br>
+    <footer>
+      &copy;CleanHouseProject
+    </footer>
+</div>
+</body>
+</html>
